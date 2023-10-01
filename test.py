@@ -2,7 +2,7 @@ from int_convolve import *
 import random
 from time import time
 
-def test_int_convolve(iters=2**15, max_size=10, num_bits=10):
+def test_int_convolve(iters, max_size, num_bits):
     M = 2 ** num_bits
     tot_time = 0
     for i in range(iters):
@@ -20,7 +20,7 @@ def test_int_convolve(iters=2**15, max_size=10, num_bits=10):
           f"<= {max_size}, and bits per integer <= {num_bits}. "
           f"test time = {round(tot_time, 3)}s.")
 
-def benchmark_int_convolve(size=2**18, num_bits=32):
+def benchmark_int_convolve(size, num_bits):
     from time import time
     M = 2 ** num_bits
     A = [random.randint(-M, M) for i in range(size)]
@@ -32,9 +32,9 @@ def benchmark_int_convolve(size=2**18, num_bits=32):
           f"with numbers of bit length {num_bits}.")
 
 if __name__ == "__main__":
-    test_int_convolve(num_bits=1)
-    test_int_convolve(num_bits=2)
-    test_int_convolve(num_bits=10)
-    test_int_convolve(num_bits=32)
+    test_int_convolve(iters=2**15, max_size = 10, num_bits=1)
+    test_int_convolve(iters=2**15, max_size = 10, num_bits=2)
+    test_int_convolve(iters=2**15, max_size = 10, num_bits=10)
+    test_int_convolve(iters=2**15, max_size = 10, num_bits=100)
 
-    benchmark_int_convolve()
+    benchmark_int_convolve(size=2**19, num_bits=100)
