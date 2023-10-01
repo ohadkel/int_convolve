@@ -28,7 +28,7 @@ def benchmark_int_convolve(size=2**18, num_bits=32):
     ss = time()
     C = int_convolve(A, B)
     ee = time()
-    print(f"{round(ee-ss, 4)}s for int_convolve {size} x {size}"
+    print(f"{round(ee-ss, 4)}s for int_convolve {size} x {size} "
           f"with numbers of bit length {num_bits}.")
 
 if __name__ == "__main__":
