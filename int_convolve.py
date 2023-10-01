@@ -51,14 +51,14 @@ try:
                 res[i] = -(sgn + num)
                 sgn = (num < 0)
                 idx += bytes_per_num
-            res[last_idx] = -(sgn + int.from_bytes(bits[idx: idx+bytes_per_num], byteorder='little', signed=False))
+            res[last_idx] = -(sgn + int.from_bytes(bits[idx: idx+bytes_per_num], byteorder='little'))
         else:
             for i in range(last_idx):
                 num = int.from_bytes(bits[idx: idx+bytes_per_num], byteorder='little', signed=True)
                 res[i] = sgn + num
                 sgn = (num < 0)
                 idx += bytes_per_num
-            res[last_idx] = (sgn + int.from_bytes(bits[idx: idx+bytes_per_num], byteorder='little', signed=False))
+            res[last_idx] = (sgn + int.from_bytes(bits[idx: idx+bytes_per_num], byteorder='little'))
         return res
 
     def int_multiply(A, B):
