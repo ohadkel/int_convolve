@@ -5,4 +5,4 @@ It is likely possible to significantly improve efficiency when the input has mor
 
 On my 2022 laptop, it takes 2.1 seconds for `2^19 x 2^19` convolution with `100`-bit ints.
 
-[The SO thread](https://stackoverflow.com/a/77210071/2506343)
+[The SO thread](https://stackoverflow.com/a/77210071/2506343) that asked for such an implementation.
