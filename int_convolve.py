@@ -121,9 +121,10 @@ def int_convolve(A, B):
 
     num_limbs = get_num_limbs(max_num)
 
+    # Possible optimization: test if id(A) == id(B) and if so, save one conversion. And square instead of using general multiplication.
     num_A = arr_to_int(A, num_limbs)
     num_B = arr_to_int(B, num_limbs)
-
+    
     num_res = int_multiply(num_A, num_B)
 
     res = int_to_arr(num_res, res_len, num_limbs)
